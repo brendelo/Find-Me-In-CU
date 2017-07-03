@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+	<div style="width:500px; height: 400px; padding: 10px; border: 10px solid #d3d3d3; border-radius: 5px; background-color: #d3d3d3; opacity: 0.8; ">
+		<?php
+
+//Post data sent from form
+$search= $_POST['search'];
+
+
+
+//To prevent MySQL injections
+
+$search= mysqli_escape_string($conn, $search);
+
+ //Perform SQL Query
+$sql= "SELECT * FROM `findmeincu` where first_name like '%$search%' or last_name like '%$search%' or title like '%$search%'  order by id";
+$results = mysqli_query($conn, $sql);
+$number = mysqli_num_rows($results);
+
+if ($number > 1){
+   $message = "{$number} results for $search";
+}
+elseif ($number = 1) {
+      $message =  "{$number} result for $search";
+ }
+ else {
+     $message = " {$number} result for $search";
+}
+
+$row = mysqli_fetch_array($results);
+
+
+   
+
+
+?>
+
+<h1><?php echo $message ;?></h1>
+	</div>
+	<style>
+body {
+    font-family: 'corbel';
+    margin-left: 400px;
+    background-image: url("C:/wamp/www/findmeincu/dd.jpg");
+    margin-top: 100px;
+    
+    
+}
+.page-header{
+    padding-left: 170px;
+}
+
+</style>
+
+</body>
+
+<?php exit; ?>

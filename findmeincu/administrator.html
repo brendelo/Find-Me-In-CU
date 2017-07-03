@@ -1,0 +1,89 @@
+<?php
+  require "connection.php";
+
+  $sql = "SELECT title, first_name, last_name, e_mail, intercom_number, room_number, building, role FROM findmeincu";
+  $result = $conn->query($sql);
+?>
+
+
+<!DOCTYPE html>
+
+  <head>
+
+    <title>Administrator</title>
+  </head>
+
+<body>
+
+<style>
+body {
+    font-family: 'corbel';
+  
+    background-image: url("C:/wamp/www/findmeincu/dd.jpg");
+    background-repeat: repeat-x, repeat-y;
+}
+
+
+.back{
+padding: 5px;
+background-color: #362E80;
+border: 1px solid black;
+text-decoration: none;
+color: white;
+width: auto;
+
+
+
+}
+
+button{
+  color: #FFF;
+  background-color: black;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: auto;
+  height: 50px;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  float: right;
+  margin-top: -80px;
+  margin-right: 50px;
+}
+
+.as{
+  background-color: purple;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: auto;
+  height: auto;
+  border: 1px solid purple;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 purple inset;
+  margin-bottom: 10px;
+  
+}
+
+
+
+
+
+</style>
+<div class="as"><h1>Administrator</h1></div>
+
+
+  <div style="width:1000px; height: auto; margin-right:auto; margin-left:auto; padding: 10px; border: 10px solid #e3e3e3; border-radius: 5px; background-color: #d3d3d3; border-radius: 10px; ">
+  
+
+  </div>
+
+</div>
+
+</body>
+
+</html>
